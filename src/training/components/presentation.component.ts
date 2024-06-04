@@ -8,10 +8,11 @@ import {
   inject,
 } from '@angular/core';
 import { LoggerBService, LoggerService } from '../services/logger.service';
-import { LOGGER_A } from '../misc/misc';
-import { LOGGER_B } from '../misc/misc';
+// import { LOGGER_A } from '../misc/misc';
+// import { LOGGER_B } from '../misc/misc';
 
-const LOGGER_SERVICE = 'LOGGER_SERVICE';
+const LOGGER_A = 'LOGGER_SERVICE';
+const LOGGER_B = 'LOGGER_SERVICE';
 
 @Component({
   standalone: true,
@@ -44,11 +45,11 @@ const LOGGER_SERVICE = 'LOGGER_SERVICE';
     //   useClass: LoggerBService, // InjectionToken
     // },
     {
-      provide: LOGGER_SERVICE,
+      provide: LOGGER_A,
       useClass: LoggerService,
     },
     {
-      provide: LOGGER_SERVICE,
+      provide: LOGGER_B,
       useClass: LoggerBService,
     },
     {
@@ -65,8 +66,8 @@ export class PresentationComponent implements OnInit {
 
   constructor(
     @Inject('API_URL') private url: string,
-    @Inject(LOGGER_SERVICE) private loggerA: LoggerService,
-    @Inject(LOGGER_SERVICE) private loggerB: LoggerBService,
+    @Inject(LOGGER_A) private loggerA: LoggerService,
+    @Inject(LOGGER_B) private loggerB: LoggerBService,
   ) {}
 
   public message: string = '';
