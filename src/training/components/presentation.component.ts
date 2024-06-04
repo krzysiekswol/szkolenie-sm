@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  INJECTOR,
   Inject,
   InjectionToken,
   OnInit,
