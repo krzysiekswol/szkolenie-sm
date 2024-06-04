@@ -4,6 +4,15 @@ import { Injectable } from '@angular/core';
 export class LoggerService {
   public showMessage(message: string): string {
     console.log('message', message);
-    return message;
+    return `LoggerA: ${message}`;
+  }
+}
+
+
+@Injectable()
+export class LoggerBService {
+  public showMessage(message: string): string {
+    console.log('message', message);
+    return `LoggerB: ${message}`;
   }
 }
